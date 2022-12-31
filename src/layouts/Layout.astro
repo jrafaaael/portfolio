@@ -15,26 +15,13 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-stone-900 text-rose-100/90 antialiased">
+    <div class="pointer-events-none z-[-1] motion-safe:animate-rotate-colors">
+      <div
+        class="max-w-xs h-96 mx-auto rounded-b-lg rounded-t-lg bg-gradient-to-r from-amber-500 via-indigo-500 to-emerald-500 absolute inset-0 -top-32 -left-64 opacity-25 blur-3xl md:max-w-5xl md:top-16 md:left-0 rotate-45"
+      >
+      </div>
+    </div>
     <slot />
   </body>
 </html>
-<style is:global>
-  :root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background-color: #f6f6f6;
-  }
-  code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-  }
-</style>
