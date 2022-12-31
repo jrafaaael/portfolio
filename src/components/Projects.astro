@@ -1,0 +1,26 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import Cube from "./icons/Cube.astro";
+import projects from "../utils/projects";
+---
+
+<section class="grid gap-8 md:grid-cols-2 md:gap-16">
+  <article>
+    <h3 class="mb-2 text-4xl font-bold">
+      <a href="#projects" class="flex gap-4 items-center">
+        <span><Cube /></span>
+        <span>Featured projects</span>
+      </a>
+    </h3>
+    <p class="ml-10 text-xl text-rose-100/70">
+      You can see more
+      <a
+        href="_blank"
+        class="font-bold text-rose-300 underline decoration-wavy decoration-rose-text-rose-300 underline-offset-2"
+      >
+        here.
+      </a>
+    </p>
+  </article>
+  {projects.map((project, idx) => <ProjectCard {...project} idx={idx} />)}
+</section>

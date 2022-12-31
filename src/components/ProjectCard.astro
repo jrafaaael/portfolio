@@ -1,0 +1,36 @@
+---
+export interface Props {
+  img: string;
+  title: string;
+  description: string;
+  stack: string[];
+  idx: number;
+}
+
+const { idx, description, img, title, stack } = Astro.props;
+---
+
+<article
+  class={`bg-stone-800 border border-stone-700 rounded-xl overflow-hidden shadow-md ${
+    idx % 2 !== 0 ? "md:-translate-y-[75%]" : ""
+  }`}
+>
+  <img src={img} class="aspect-[21/9] object-cover" alt={`${title} project`} />
+  <div class="p-8 pt-4">
+    <h4
+      class="mb-2 pb-2 border-b-2 border-stone-700 text-2xl font-bold text-rose-100/90"
+    >
+      {title}
+    </h4>
+    <p class="mb-4 text-lg text-rose-100/70 line-clamp-3">{description}</p>
+    <div class="flex flex-wrap gap-2">
+      {
+        stack.map((name) => (
+          <span class={`py-1 px-2 text-sm capitalize text-blue-600 rounded-md`}>
+            {name}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</article>
