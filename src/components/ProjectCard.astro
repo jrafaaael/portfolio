@@ -11,11 +11,11 @@ const { idx, description, img, title, stack } = Astro.props;
 ---
 
 <article
-  class={`bg-stone-800 border border-stone-700 rounded-xl overflow-hidden shadow-md ${
+  class={`h-fit bg-stone-800 border border-stone-700 rounded-xl overflow-hidden shadow-md ${
     idx % 2 !== 0 ? "md:-translate-y-[75%]" : ""
   }`}
 >
-  <img src={img} class="aspect-[21/9] object-cover" alt={`${title} project`} />
+  <img src={img} class="w-full aspect-video object-cover" alt={`${title} project`} />
   <div class="p-8 pt-4">
     <h4
       class="mb-2 pb-2 border-b-2 border-stone-700 text-2xl font-bold text-rose-100/90"
