@@ -38,7 +38,7 @@ const projects: Project[] = [
     title: "sigi",
     description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia nostrum eius, nemo iste iure odit voluptates vel quisquam ad sint ullam, placeat dolore aliquid voluptatem corrupti necessitatibus magnam ea quia.`,
     stack: [JAVASCRIPT, REACT, TAILWIND],
-    img: "/images/code.jpeg",
+    img: "/images/sigi.png",
   },
   {
     title: "moodhub",
