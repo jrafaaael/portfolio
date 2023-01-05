@@ -20,7 +20,7 @@ export interface Project {
   img: string;
 }
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     title: "ecg",
     description: `visualize the ECG graph in different devices simultaneously in real time through WiFi in the patient/doctor's preferred browser. developed for the subject "Instrumentación Médica IV" and chosen to be exposed at the "Expo Investigación Universitaria 2022"`,
@@ -53,5 +53,3 @@ const projects: Project[] = [
     img: "/images/arduino.jpeg",
   },
 ];
-
-export default projects;
