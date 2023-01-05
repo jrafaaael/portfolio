@@ -12,13 +12,21 @@ const { idx, description, img, title, stack } = Astro.props;
   class={`group h-fit bg-stone-800 border border-stone-700 rounded-xl overflow-hidden shadow-md
   ${idx % 2 !== 0 ? "md:-translate-y-[75%]" : ""}`}
 >
-  <div class="overflow-hidden">
-    <img
-      src={img}
-      class="w-full aspect-video object-cover transition-transform group-hover:scale-[1.025]"
-      alt={`${title} project`}
-    />
-  </div>
+  {
+    img ? (
+      <div class="overflow-hidden">
+        <img
+          src={img}
+          class="w-full aspect-video object-cover transition-transform group-hover:scale-[1.025]"
+          alt={`${title} project`}
+        />
+      </div>
+    ) : (
+      <div class="w-full aspect-video grid place-content-center">
+        <p class="text-4xl font-bold">WIP</p>
+      </div>
+    )
+  }
   <div class="p-8 pt-4">
     <h4
       class="mb-2 pb-2 border-b-2 border-stone-700 text-2xl font-bold text-rose-100/90"
