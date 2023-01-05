@@ -43,7 +43,7 @@ export const projects: Project[] = [
   {
     title: "moodhub",
     description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia nostrum eius, nemo iste iure odit voluptates vel quisquam ad sint ullam, placeat dolore aliquid voluptatem corrupti necessitatibus magnam ea quia.`,
-    stack: [TYPESCRIPT, REACT, REACT_NATIVE, EXPO],
+    stack: [TYPESCRIPT, REACT_NATIVE, EXPO],
   },
   {
     title: "school-bell-automation",
