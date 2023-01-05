@@ -9,8 +9,11 @@ const { idx, description, img, title, stack } = Astro.props;
 ---
 
 <article
-  class={`h-fit bg-stone-800 border border-stone-700 rounded-xl overflow-hidden shadow-md ${
-    idx % 2 !== 0 ? "md:-translate-y-[75%]" : ""
+  class={`h-fit bg-stone-800 border border-stone-700 rounded-xl overflow-hidden shadow-md transition-transform
+  ${
+    idx % 2 !== 0
+      ? "md:-translate-y-[75%] md:hover:-translate-y-[calc(5px_+_75%)]"
+      : "md:hover:-translate-y-[5px]"
   }`}
 >
   <img
