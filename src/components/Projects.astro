@@ -1,5 +1,6 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
+import Link from "./Link.astro";
 import Cube from "./icons/Cube.astro";
 import { projects } from "../data/projects";
 ---
@@ -14,12 +15,7 @@ import { projects } from "../data/projects";
     </h3>
     <p class="ml-10 text-xl text-rose-100/70">
       You can see more
-      <a
-        href="_blank"
-        class="font-bold text-rose-300 underline decoration-wavy decoration-rose-text-rose-300 underline-offset-2"
-      >
-        here
-      </a>
+      <Link href="#">here</Link>
     </p>
   </article>
   {projects.map((project, idx) => <ProjectCard {...project} idx={idx} />)}
