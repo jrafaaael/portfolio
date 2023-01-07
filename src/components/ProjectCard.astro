@@ -33,13 +33,13 @@ const { idx, description, img, title, stack } = Astro.props;
     >
       {title}
     </h4>
-    <p class="mb-4 text-lg text-rose-100/70 line-clamp-3">{description}</p>
+    <p class="mb-4 text-md text-rose-100/70 line-clamp-3">{description}</p>
     <div class="flex flex-wrap gap-2">
       {
         stack.map(({ name, icon: Icon, bg, bd, fg }) => (
           <span
             data-tech
-            class={`py-1 px-2 text-sm font-bold border rounded-md flex items-center gap-2
+            class={`py-1 px-2 text-xs font-bold border rounded-md flex items-center gap-2
               ${bg ?? "bg-gray-200/20"}
               ${fg ?? "text-gray-200"}
               ${bd ?? "border-gray-200/40"}`}
