@@ -36,13 +36,13 @@ export const projects: Project[] = [
   },
   {
     title: "sigi",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia nostrum eius, nemo iste iure odit voluptates vel quisquam ad sint ullam, placeat dolore aliquid voluptatem corrupti necessitatibus magnam ea quia.`,
+    description: `internal tool to share files on local network and generate "Plan Operativo Anual" (POA) document. also allow internal comunication between teams through real-time chat. developed for CMSF`,
     stack: [JAVASCRIPT, REACT, TAILWIND],
     img: "/images/sigi.webp",
   },
   {
     title: "moodhub",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia nostrum eius, nemo iste iure odit voluptates vel quisquam ad sint ullam, placeat dolore aliquid voluptatem corrupti necessitatibus magnam ea quia.`,
+    description: `app to track emotions daily`,
     stack: [TYPESCRIPT, REACT_NATIVE, EXPO],
   },
   {
