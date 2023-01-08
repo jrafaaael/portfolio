@@ -51,4 +51,4 @@ export const projects: Project[] = [
     stack: [ARDUINO],
     img: "/images/arduino.webp",
   },
-];
+].sort((a, b) => b.description.length - a.description.length);
