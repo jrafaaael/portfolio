@@ -10,7 +10,7 @@ const { idx, description, img, title, stack } = Astro.props;
 
 <article
   class={`group h-fit bg-stone-800 border-2 border-stone-700/50 rounded-xl overflow-hidden shadow-md
-  ${idx % 2 !== 0 ? "md:-translate-y-[75%]" : ""}`}
+  ${idx % 2 === 0 ? "" : "md:-translate-y-[75%]"}`}
 >
   {
     img ? (
@@ -28,9 +28,7 @@ const { idx, description, img, title, stack } = Astro.props;
     )
   }
   <div class="p-4 lg:p-8 lg:pt-4">
-    <h4
-      class="mb-2 pb-2 border-b-2 border-stone-700/50 text-2xl font-bold text-rose-100/90 truncate"
-    >
+    <h4 class="mb-2 text-2xl font-bold text-rose-100/90 truncate">
       {title}
     </h4>
     <p class="mb-4 text-md text-rose-100/70 line-clamp-3">{description}</p>
