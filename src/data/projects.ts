@@ -23,14 +23,14 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "ecg",
-    description: `visualize the ECG graph in different devices simultaneously in real time through WiFi in the patient/doctor's preferred browser. developed for the subject "Instrumentación Médica IV" and chosen to be exposed at the "Expo Investigación Universitaria 2022"`,
+    description: `visualize ECG plot in different devices simultaneously in real-time through WiFi in the patient/doctor's preferred browser. developed for the subject "Instrumentación Médica IV" and chosen to be exposed at "Expo Investigación Universitaria 2022"`,
     stack: [JAVASCRIPT, NODE, EXPRESS, SOCKETIO, ARDUINO],
     img: "/images/ecg.webp",
   },
   {
     title: "tw-rt-report",
     description:
-      "script that generate a SpreadSheet with all retweets made by @account_a to @account_b in the current month. developed for CMSF",
+      "script that generate a spreadsheet with all retweets made by @account_a to @account_b in the current month. developed for CMSF",
     stack: [PYTHON],
     img: "/images/code.webp",
   },
@@ -47,7 +47,7 @@ export const projects: Project[] = [
   },
   {
     title: "school-bell-automation",
-    description: `automation of the school bell of "Complejo Educativo Fray Luís Amigó" for each start of class, recess and end of classes of each section and grade`,
+    description: `automation of "Complejo Educativo Fray Luís Amigó"\`s school bell for each start of class, recess and end of classes of each section and grade`,
     stack: [ARDUINO],
     img: "/images/arduino.webp",
   },
