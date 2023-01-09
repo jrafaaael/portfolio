@@ -23,7 +23,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "ecg",
-    description: `visualize ECG plot in different devices simultaneously in real-time through WiFi in the patient/doctor's preferred browser. developed for the subject "Instrumentación Médica IV" and chosen to be exposed at "Expo Investigación Universitaria 2022"`,
+    description: `hardware and software development to visualize ECG plot in multiple devices simultaneously in real-time through WiFi in the patient/doctor's preferred browser. developed for the subject "Instrumentación Médica IV" and chosen to be exposed at "Expo Investigación Universitaria 2022"`,
     stack: [JAVASCRIPT, NODE, EXPRESS, SOCKETIO, ARDUINO],
     img: "/images/ecg.webp",
   },
@@ -37,7 +37,7 @@ export const projects: Project[] = [
   {
     title: "sigi",
     description: `internal tool to share files on local network and generate "Plan Operativo Anual" (POA) document. also allow internal comunication between teams through real-time chat. developed for CMSF`,
-    stack: [JAVASCRIPT, REACT, TAILWIND],
+    stack: [JAVASCRIPT, REACT, TAILWIND, SOCKETIO],
     img: "/images/sigi.webp",
   },
   {
