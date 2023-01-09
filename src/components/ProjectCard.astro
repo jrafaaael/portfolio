@@ -11,11 +11,9 @@ const { idx, description, img, title, stack } = Astro.props;
 <article
   class={`group h-fit bg-stone-800 border-2 border-stone-700/50 rounded-xl overflow-hidden shadow-md relative
   ${idx % 2 === 0 ? "" : "md:-translate-y-[50%]"}`}
-  data-project
 >
   <div
     class="w-full aspect-square overflow-hidden transition group-hover:blur-md"
-    data-media
   >
     {
       img ? (
@@ -32,65 +30,35 @@ const { idx, description, img, title, stack } = Astro.props;
     }
   </div>
   <div
-    class="h-full bg-stone-900 absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-90"
-    data-overlay
+    class="w-full h-[75%] bg-gradient-to-b from-stone-900/90 absolute inset-0 transition-transform duration-500 group-hover:translate-y-full group-hover:opacity-0"
   >
   </div>
-  <div
-    class="w-full h-[88px] bg-stone-900 absolute bottom-0 left-0 opacity-90 transition duration-500 group-hover:translate-y-full group-hover:opacity-0"
-    data-title-overlay
-  >
-  </div>
-  <div
-    class="p-4 absolute bottom-0 left-0 translate-y-full transition-transform duration-500 group-hover:translate-y-0 lg:p-8 lg:pt-4"
-    data-content
-  >
+  <div class="p-4 absolute inset-0">
     <h4
-      class="mb-2 text-2xl font-bold text-rose-100/90 line-clamp-1 -translate-y-20 group-hover:translate-y-0 transition duration-500"
+      class="mb-2 text-2xl font-bold text-rose-100/90 line-clamp-1 md:-translate-y-20 md:group-hover:translate-y-0 md:transition duration-500"
     >
       {title}
     </h4>
     <p
-      class="mb-4 text-md text-rose-100/70 line-clamp-6 md:line-clamp-5 lg:line-clamp-none"
+      class="hidden mb-4 text-md text-rose-100/70 md:line-clamp-3 lg:line-clamp-none"
     >
       {description}
     </p>
-    <div class="hidden xs:flex xs:flex-wrap xs:gap-2">
+    <div class="hidden md:flex gap-2 justify-start md:flex-wrap">
       {
         stack.map(({ name, icon: Icon, bg, bd, fg }) => (
-          <span
+          <div
             data-tech
-            class={`py-1 px-2 text-xs font-bold border rounded-md flex items-center gap-2
+            class={`py-1 px-2 text-xs font-bold border rounded-md flex shrink-0 items-center gap-2
               ${bg ?? "bg-gray-200/20"}
               ${fg ?? "text-gray-200"}
               ${bd ?? "border-gray-200/40"}`}
           >
             <Icon />
-            {name}
-          </span>
+            <span>{name}</span>
+          </div>
         ))
       }
     </div>
   </div>
 </article>
-
-<style>
-  @media (pointer: coarse) {
-    [data-project] [data-media] {
-      filter: blur(12px);
-    }
-
-    [data-project] [data-overlay] {
-      opacity: 0.9;
-    }
-
-    [data-project] [data-title-overlay] {
-      transform: translateY(100%);
-    }
-
-    [data-project] [data-content],
-    [data-project] [data-content] h4 {
-      transform: translateY(0);
-    }
-  }
-</style>
