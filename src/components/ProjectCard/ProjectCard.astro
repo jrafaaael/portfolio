@@ -1,0 +1,21 @@
+---
+import { Project } from "../../data/projects";
+import Body from "./Body.astro";
+import Media from "./Media.astro";
+import Overlay from "./Overlay.astro";
+
+export interface Props extends Project {
+  idx: number;
+}
+
+const { description, idx, stack, title, img } = Astro.props;
+---
+
+<article
+  class={`group h-fit bg-stone-800 border-2 border-stone-700/50 rounded-xl overflow-hidden shadow-md relative
+  ${idx % 2 === 0 ? "" : "md:-translate-y-[50%]"}`}
+>
+  <Media img={img} title={title} />
+  <Overlay />
+  <Body description={description} stack={stack} title={title} />
+</article>
