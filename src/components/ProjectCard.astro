@@ -9,30 +9,53 @@ const { idx, description, img, title, stack } = Astro.props;
 ---
 
 <article
-  class={`group h-fit bg-stone-800 border-2 border-stone-700/50 rounded-xl overflow-hidden shadow-md
-  ${idx % 2 === 0 ? "" : "md:-translate-y-[75%]"}`}
+  class={`group h-fit bg-stone-800 border-2 border-stone-700/50 rounded-xl overflow-hidden shadow-md relative
+  ${idx % 2 === 0 ? "" : "md:-translate-y-[50%]"}`}
+  data-project
 >
-  {
-    img ? (
-      <div class="overflow-hidden">
+  <div
+    class="w-full aspect-square overflow-hidden transition group-hover:blur-md"
+    data-media
+  >
+    {
+      img ? (
         <img
           src={img}
-          class="w-full aspect-video object-cover transition-transform group-hover:scale-[1.025]"
+          class="aspect-square object-cover"
           alt={`${title} project`}
         />
-      </div>
-    ) : (
-      <div class="w-full aspect-video grid place-content-center">
-        <p class="text-4xl font-bold">WIP</p>
-      </div>
-    )
-  }
-  <div class="p-4 lg:p-8 lg:pt-4">
-    <h4 class="mb-2 text-2xl font-bold text-rose-100/90 truncate">
+      ) : (
+        <div class="h-full grid place-content-center">
+          <p class="text-4xl font-bold">WIP</p>
+        </div>
+      )
+    }
+  </div>
+  <div
+    class="h-full bg-stone-900 absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-90"
+    data-overlay
+  >
+  </div>
+  <div
+    class="w-full h-[88px] bg-stone-900 absolute bottom-0 left-0 opacity-90 transition duration-500 group-hover:translate-y-full group-hover:opacity-0"
+    data-title-overlay
+  >
+  </div>
+  <div
+    class="p-4 absolute bottom-0 left-0 translate-y-full transition-transform duration-500 group-hover:translate-y-0 lg:p-8 lg:pt-4"
+    data-content
+  >
+    <h4
+      class="mb-2 text-2xl font-bold text-rose-100/90 line-clamp-1 -translate-y-20 group-hover:translate-y-0 transition duration-500"
+    >
       {title}
     </h4>
-    <p class="mb-4 text-md text-rose-100/70 line-clamp-3">{description}</p>
-    <div class="flex flex-wrap gap-2">
+    <p
+      class="mb-4 text-md text-rose-100/70 line-clamp-6 md:line-clamp-5 lg:line-clamp-none"
+    >
+      {description}
+    </p>
+    <div class="hidden xs:flex xs:flex-wrap xs:gap-2">
       {
         stack.map(({ name, icon: Icon, bg, bd, fg }) => (
           <span
@@ -50,3 +73,24 @@ const { idx, description, img, title, stack } = Astro.props;
     </div>
   </div>
 </article>
+
+<style>
+  @media (pointer: coarse) {
+    [data-project] [data-media] {
+      filter: blur(12px);
+    }
+
+    [data-project] [data-overlay] {
+      opacity: 0.9;
+    }
+
+    [data-project] [data-title-overlay] {
+      transform: translateY(100%);
+    }
+
+    [data-project] [data-content],
+    [data-project] [data-content] h4 {
+      transform: translateY(0);
+    }
+  }
+</style>
