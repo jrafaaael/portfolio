@@ -5,6 +5,7 @@ specifiers:
   '@tailwindcss/line-clamp': ^0.4.2
   astro: ^1.8.0
   tailwindcss: ^3.0.24
+  typescript: ^4.9.4
 
 dependencies:
   '@astrojs/tailwind': 2.1.3_tailwindcss@3.2.4
@@ -13,6 +14,7 @@ dependencies:
 
 devDependencies:
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
+  typescript: 4.9.4
 
 packages:
 
@@ -3266,7 +3268,6 @@ packages:
     resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: false
 
   /unherit/3.0.1:
     resolution: {integrity: sha512-akOOQ/Yln8a2sgcLj4U0Jmx0R5jpIg2IUyRrWOzmEbjBtGzBdHtSeFKgoEcoH4KYIG/Pb8GQ/BwtYm0GCq1Sqg==}
