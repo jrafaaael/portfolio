@@ -1,0 +1,23 @@
+---
+import type { Project } from "../../../data/projects";
+
+interface Props extends Pick<Project, "title" | "img"> {}
+
+const { title, img } = Astro.props;
+---
+
+<>
+  {
+    img ? (
+      <img
+        src={img}
+        class="w-full aspect-square object-cover lg:h-96 lg:aspect-auto"
+        alt={`${title} project`}
+      />
+    ) : (
+      <div class="w-full aspect-square rounded-2xl grid place-content-center lg:h-96 lg:aspect-auto">
+        <p class="text-4xl font-bold">WIP</p>
+      </div>
+    )
+  }
+</>

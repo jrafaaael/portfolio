@@ -1,0 +1,23 @@
+---
+import ProjectCard from "./ProjectCard/ProjectCard.astro";
+import { projects } from "../../data/projects";
+
+let isSmaller = false;
+---
+
+{
+  projects.map(({ description, title, img }, idx) => {
+    if ((idx + 1) % 2 === 0) {
+      isSmaller = !isSmaller;
+    }
+
+    return (
+      <ProjectCard
+        description={description}
+        title={title}
+        img={img}
+        isSmaller={isSmaller}
+      />
+    );
+  })
+}
