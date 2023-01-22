@@ -17,7 +17,7 @@ export interface Project {
   title: string;
   description: string;
   stack: Tech[];
-  img?: string;
+  img: string | null;
 }
 
 export const projects: Project[] = [
@@ -44,6 +44,7 @@ export const projects: Project[] = [
     title: "moodhub",
     description: `app to track emotions daily`,
     stack: [TYPESCRIPT, REACT_NATIVE, EXPO],
+    img: null,
   },
   {
     title: "school-bell-automation",
