@@ -1,0 +1,23 @@
+---
+import ProjectList from "./ProjectList.astro";
+import Link from "../Link.astro";
+import Cube from "../icons/Cube.astro";
+---
+
+<section>
+  <h2 class="text-2xl font-bold">
+    <a href="#projects" class="flex gap-4 items-center">
+      <span><Cube /></span>
+      <span>Featured projects</span>
+    </a>
+  </h2>
+  <p class="mb-8 ml-10 text-xl text-rose-100/70">
+    You can see more
+    <Link href="#">here</Link>
+  </p>
+  <section
+    class="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-5"
+  >
+    <ProjectList />
+  </section>
+</section>
