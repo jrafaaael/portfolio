@@ -14,6 +14,9 @@ module.exports = {
         react: "#61DAFB",
         tailwind: "#38b2ac",
       },
+      fontFamily: {
+        sans: ["Epilogue", ...defaultTheme.fontFamily.sans],
+      },
     },
     screens: {
       xs: "375px",
