@@ -13,6 +13,13 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+  <link
+    rel="preload"
+    href="/fonts/Epilogue.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
     <title>{title}</title>
   </head>
   <body class="bg-stone-900 text-rose-100/90 tracking-wider antialiased">
@@ -21,18 +28,18 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-  [data-tech] svg {
-    width: 1rem;
-    aspect-ratio: 1;
-    display: inline-block;
-    vertical-align: baseline;
-  }
-
   @font-face {
     font-family: "Epilogue";
     src: url("/fonts/Epilogue.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+  }
+
+  [data-tech] svg {
+    width: 1rem;
+    aspect-ratio: 1;
+    display: inline-block;
+    vertical-align: baseline;
   }
 </style>
