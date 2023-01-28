@@ -32,7 +32,7 @@ export const projects: Project[] = [
     description:
       "script that generate a spreadsheet with all retweets made by @account_a to @account_b in the current month. developed for CMSF",
     stack: [PYTHON],
-    img: "/images/code.webp",
+    img: "/images/python_code.webp",
   },
   {
     title: "sigi",
