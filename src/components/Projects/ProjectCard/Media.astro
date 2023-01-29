@@ -6,16 +6,22 @@ interface Props extends Pick<Project, "title" | "img"> {}
 const { title, img } = Astro.props;
 ---
 
-{
-  img ? (
-    <img
-      src={img}
-      class="w-full aspect-square object-cover lg:h-96 lg:aspect-auto"
-      alt={`${title} project`}
-    />
-  ) : (
-    <div class="w-full aspect-square rounded-2xl grid place-content-center lg:h-96 lg:aspect-auto">
-      <p class="text-4xl font-bold">WIP</p>
-    </div>
-  )
-}
+<div
+  class={`aspect-[4/3] rounded-2xl overflow-hidden lg:h-96 lg:aspect-auto ${
+    !img ? "border border-white/10 " : ""
+  }`}
+>
+  {
+    img ? (
+      <img
+        src={img}
+        class="w-full h-full object-cover"
+        alt={`${title} project`}
+      />
+    ) : (
+      <div class="w-full h-full grid place-content-center">
+        <p class="text-4xl font-bold">WIP</p>
+      </div>
+    )
+  }
+</div>
