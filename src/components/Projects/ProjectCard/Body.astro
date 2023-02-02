@@ -6,9 +6,9 @@ interface Props extends Pick<Project, "title" | "description"> {}
 const { title, description } = Astro.props;
 ---
 
-<div class="w-full p-4 bg-black/95 absolute bottom-0 left-0 lg:px-8 lg:py-4">
-  <h3 class="text-rose-100/90 text-xl font-bold line-clamp-1">
+<div>
+  <h3 class="text-rose-100/90 text-2xl font-bold line-clamp-1">
     {title}
   </h3>
-  <p class="text-rose-100/70 line-clamp-1">{description}</p>
+  <p class="text-rose-100/70 leading-loose line-clamp-2">{description}</p>
 </div>
