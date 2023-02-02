@@ -1,12 +1,12 @@
 ---
-export interface Props {
+interface Props {
   href: string;
-  isExternal?: boolean;
+  className?: string;
 }
 
-const { href, isExternal } = Astro.props;
+const { href, className } = Astro.props;
 ---
 
-<a href={href} class="font-bold text-rose-300">
+<a href={href} class={`text-rose-300 ${className}`}>
   <slot />
 </a>
