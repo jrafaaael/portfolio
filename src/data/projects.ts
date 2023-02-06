@@ -28,6 +28,12 @@ export const projects: Project[] = [
     img: "/images/ecg.webp",
   },
   {
+    title: "sigi",
+    description: `internal tool to share files on local network and generate "Plan Operativo Anual" (POA) document. also allow internal comunication between teams through real-time chat. developed for CMSF`,
+    stack: [JAVASCRIPT, REACT, TAILWIND, SOCKETIO],
+    img: "/images/sigi.webp",
+  },
+  {
     title: "tw-rt-report",
     description:
       "script that generate a spreadsheet with all retweets made by @account_a to @account_b in the current month. developed for CMSF",
@@ -35,10 +41,10 @@ export const projects: Project[] = [
     img: "/images/python_code.webp",
   },
   {
-    title: "sigi",
-    description: `internal tool to share files on local network and generate "Plan Operativo Anual" (POA) document. also allow internal comunication between teams through real-time chat. developed for CMSF`,
-    stack: [JAVASCRIPT, REACT, TAILWIND, SOCKETIO],
-    img: "/images/sigi.webp",
+    title: "school-bell-automation",
+    description: `automation of "Complejo Educativo Fray Luís Amigó"\`s school bell for each start of class, recess and end of classes of each section and grade`,
+    stack: [ARDUINO],
+    img: "/images/arduino.webp",
   },
   {
     title: "moodhub",
@@ -46,10 +52,4 @@ export const projects: Project[] = [
     stack: [TYPESCRIPT, REACT_NATIVE, EXPO],
     img: null,
   },
-  {
-    title: "school-bell-automation",
-    description: `automation of "Complejo Educativo Fray Luís Amigó"\`s school bell for each start of class, recess and end of classes of each section and grade`,
-    stack: [ARDUINO],
-    img: "/images/arduino.webp",
-  },
-].sort((a, b) => b.description.length - a.description.length);
+];
