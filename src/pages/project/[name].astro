@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { projects } from "../../data/projects";
+
+export function getStaticPaths() {
+  return projects.map(({ title }) => ({ params: { name: title } }));
+}
+
+const { name } = Astro.params;
+const { description, stack, img } = projects.find(
+  ({ title }) => title === name
+)!;
+---
+
+<Layout title={`jrafaaael | ${name}`}>
+  <main class="max-w-4xl m-auto mt-28 py-8 px-4 md:mt-56 md:px-8">
+    <h1 class="mb-4 text-4xl font-bold">{name}</h1>
+    <p class="mb-4 text-rose-100/70 leading-relaxed">
+      {description}
+    </p>
+    <ul class="mb-8 flex flex-wrap gap-4">
+      {
+        stack.map(({ icon: Icon, name }) => (
+          <li class="text-rose-100/40 text-sm lowercase flex justify-center gap-2">
+            {/* <Icon /> */}
+            <span>{name}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <img
+      class="w-full aspect-square md:aspect-[4/3] rounded-3xl object-cover"
+      src={img}
+    />
+  </main>
+</Layout>
