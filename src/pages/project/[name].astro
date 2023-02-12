@@ -15,10 +15,10 @@ const { description, stack, img } = projects.find(
 <Layout title={`jrafaaael | ${name}`}>
   <main class="max-w-4xl m-auto mt-28 py-8 px-4 md:mt-56 md:px-8">
     <h1 class="mb-4 text-4xl font-bold">{name}</h1>
-    <p class="mb-4 text-rose-100/70 leading-relaxed">
+    <p class="mb-4 text-rose-100/70 text-xl leading-relaxed">
       {description}
     </p>
-    <ul class="mb-8 flex flex-wrap gap-4">
+    <ul class="mb-8 flex flex-wrap gap-2">
       {
         stack.map(({ icon: Icon, name }) => (
           <li class="text-rose-100/60 lowercase italic flex justify-center items-center gap-2 after:content-['•'] last:after:content-none">
