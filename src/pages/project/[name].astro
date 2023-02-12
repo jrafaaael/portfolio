@@ -28,9 +28,17 @@ const { description, stack, img } = projects.find(
         ))
       }
     </ul>
-    <img
-      class="w-full aspect-square md:aspect-[4/3] rounded-3xl object-cover"
-      src={img}
-    />
+    {
+      img ? (
+        <img
+          class="w-full aspect-square md:aspect-[4/3] rounded-3xl object-cover"
+          src={img}
+        />
+      ) : (
+        <article class="w-full aspect-square bg-stone-800 rounded-3xl grid place-content-center object-cover md:aspect-[4/3]">
+          <p class="text-4xl font-bold tracking-widest">WIP</p>
+        </article>
+      )
+    }
   </main>
 </Layout>
