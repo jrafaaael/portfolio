@@ -10,9 +10,11 @@ interface Props extends Pick<Project, "title" | "description" | "img"> {
 const { description, title, img, isSmaller } = Astro.props;
 ---
 
-<article class={`flex flex-col gap-4 ${isSmaller ? "lg:col-span-2" : "lg:col-span-3"}`}>
-  <Media title={title} img={img} />
-  <Body description={description} title={title} />
+<article class={`${isSmaller ? "lg:col-span-2" : "lg:col-span-3"}`}>
+  <a class="flex flex-col gap-4" href={`/project/${title}`}>
+    <Media title={title} img={img} />
+    <Body description={description} title={title} />
+  </a>
 </article>
 
 <style>

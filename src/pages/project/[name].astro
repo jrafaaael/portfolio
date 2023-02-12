@@ -1,0 +1,48 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { projects } from "../../data/projects";
+import { startWithVowel } from "../../utils/start-with-vowel";
+
+export function getStaticPaths() {
+  return projects.map(({ title }) => ({ params: { name: title } }));
+}
+
+const { name } = Astro.params;
+const { description, stack, img } = projects.find(
+  ({ title }) => title === name
+)!;
+
+const article = startWithVowel(description) ? "an" : "a";
+---
+
+<Layout title={`jrafaaael | ${name}`}>
+  <main class="max-w-4xl m-auto mt-28 py-8 px-4 md:mt-56 md:px-8">
+    <h1 class="mb-4 text-4xl font-bold">{name}</h1>
+    <p class="mb-4 text-rose-100/70 text-xl leading-relaxed">
+      {description}
+    </p>
+    <ul class="mb-8 flex flex-wrap gap-2">
+      {
+        stack.map(({ icon: Icon, name }) => (
+          <li class="text-rose-100/60 lowercase italic flex justify-center items-center gap-2 after:content-['•'] after:font-bold last:after:content-none">
+            <Icon />
+            <span>{name}</span>
+          </li>
+        ))
+      }
+    </ul>
+    {
+      img ? (
+        <img
+          class="w-full aspect-square md:aspect-[4/3] rounded-3xl object-cover"
+          alt={`${name} is ${article} ${description.toLowerCase()}`}
+          src={img}
+        />
+      ) : (
+        <article class="w-full aspect-square bg-stone-800 rounded-3xl grid place-content-center object-cover md:aspect-[4/3]">
+          <p class="text-4xl font-bold tracking-widest">WIP</p>
+        </article>
+      )
+    }
+  </main>
+</Layout>
