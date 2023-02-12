@@ -21,7 +21,7 @@ const { description, stack, img } = projects.find(
     <ul class="mb-8 flex flex-wrap gap-2">
       {
         stack.map(({ icon: Icon, name }) => (
-          <li class="text-rose-100/60 lowercase italic flex justify-center items-center gap-2 after:content-['•'] last:after:content-none">
+          <li class="text-rose-100/60 lowercase italic flex justify-center items-center gap-2 after:content-['•'] after:font-bold last:after:content-none">
             <Icon />
             <span>{name}</span>
           </li>
