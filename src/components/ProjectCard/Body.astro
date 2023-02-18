@@ -7,13 +7,13 @@ const { title, contribution } = Astro.props;
 ---
 
 <div>
-  <h3 class="mb-2 text-rose-100/90 text-2xl font-bold line-clamp-1">
+  <h3 class="mb-1 text-rose-100/90 text-2xl font-bold line-clamp-1">
     {title}
   </h3>
   <ul class="flex items-center gap-2">
     {
       contribution.map((work) => (
-        <li class="text-rose-100/60 leading-none flex items-center gap-2 after:content-['•'] after:text-rose-100/30 after:font-bold last:after:content-none">
+        <li class="text-rose-100/50 text-sm lowercase flex items-center gap-2 after:content-['•'] after:text-rose-100/30 last:after:content-none">
           {work}
         </li>
       ))
