@@ -24,7 +24,7 @@ const article = startWithVowel(description) ? "an" : "a";
     <ul class="mb-8 flex flex-wrap gap-4">
       {
         stack.map(({ icon: Icon, name }) => (
-          <li class="text-rose-100/60 lowercase italic flex justify-center items-center gap-2 after:content-['•'] after:ml-2 after:text-rose-100/30 after:font-bold last:after:content-none">
+          <li class="text-rose-100/60 lowercase flex justify-center items-center gap-2 after:content-['•'] after:ml-2 after:text-rose-100/30 after:font-bold last:after:content-none">
             <Icon />
             <span>{name}</span>
           </li>
