@@ -7,13 +7,13 @@ const { title, img } = Astro.props;
 ---
 
 <div
-  class="aspect-square border border-white/10 rounded-3xl relative lg:h-96 lg:aspect-auto [&>*]:rounded-3xl"
+  class="aspect-square border border-white/10 rounded-3xl relative overflow-hidden lg:h-96 lg:aspect-auto [&>*]:rounded-3xl"
 >
   {
     img ? (
       <img
         src={img}
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover transition group-hover:scale-105"
         alt={`${title} project`}
       />
     ) : (
