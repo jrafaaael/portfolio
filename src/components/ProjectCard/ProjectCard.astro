@@ -1,7 +1,7 @@
 ---
 import Body from "./Body.astro";
 import Media from "./Media.astro";
-import type { Project } from "../../../data/projects";
+import type { Project } from "../../data/projects";
 
 interface Props extends Pick<Project, "title" | "contribution" | "img"> {
   isSmaller: boolean;
