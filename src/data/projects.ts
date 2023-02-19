@@ -31,7 +31,7 @@ export const projects: Project[] = [
   },
   {
     title: "sigi",
-    description: `Internal tool to share files on local network and generate "Plan Operativo Anual" (POA) document. Also allow internal comunication between teams through real-time chat.`,
+    description: `Self-hosted app to share files on local network and generate "Plan Operativo Anual" (POA) document. Also allow internal comunication between teams through real-time chat. Backend built with PHP (Laravel) by a coworker.`,
     stack: [JAVASCRIPT, REACT, TAILWIND, SOCKETIO],
     contribution: ["FrontEnd", "Design"],
     img: "/images/sigi.webp",
