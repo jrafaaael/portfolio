@@ -7,6 +7,4 @@ interface Props {
 const { href, className = "" } = Astro.props;
 ---
 
-<a href={href} class={`text-rose-300 ${className}`}>
-  <slot />
-</a>
+<a href={href} class={`text-rose-300 ${className}`}><slot /></a>
