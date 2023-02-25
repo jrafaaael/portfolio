@@ -12,16 +12,16 @@ export const links = [
   {
     label: "LinkedIn",
     icon: LinkedIn,
-    link: "#",
+    link: "https://www.linkedin.com/in/jrafaaael/",
   },
   {
     label: "Twitter",
     icon: Twitter,
-    link: "#",
+    link: "https://twitter.com/_jrafaaael",
   },
   {
     label: "Email",
     icon: At,
-    link: "#",
+    link: "mailto:jrmd070102@gmail.com",
   },
 ];
