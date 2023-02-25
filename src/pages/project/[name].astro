@@ -8,41 +8,52 @@ export function getStaticPaths() {
 }
 
 const { name } = Astro.params;
-const { description, stack, img } = projects.find(
+const { description, stack, contribution, img } = projects.find(
   ({ title }) => title === name
 )!;
 
 const article = startWithVowel(description) ? "an" : "a";
+const formatter = new Intl.ListFormat("en");
 ---
 
 <Layout title={`jrafaaael | ${name}`}>
-  <main class="max-w-4xl m-auto mt-28 py-8 px-4 md:mt-56 md:px-8">
+  <main class="max-w-4xl m-auto mt-28 p-6 md:mt-56">
     <h1 class="mb-4 text-4xl font-bold">{name}</h1>
-    <p class="mb-4 text-rose-100/70 text-xl leading-relaxed">
+    <p class="mb-6 text-rose-100/70 text-lg leading-relaxed md:text-xl">
       {description}
     </p>
-    <ul class="mb-8 flex flex-wrap gap-4">
+    <section
+      class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:gap-16"
+    >
+      <article class="basis-1/2">
+        <h2 class="mb-1 text-xs font-bold uppercase">Build with</h2>
+        <p class="text-rose-100/70 lowercase">
+          {formatter.format(stack.map(({ name }) => name))}
+        </p>
+      </article>
+      <article class="basis-1/2">
+        <h2 class="mb-1 text-xs font-bold uppercase">My contribution</h2>
+        <p class="text-rose-100/70 lowercase">
+          {formatter.format(contribution)}
+        </p>
+      </article>
+    </section>
+    <section
+      class="aspect-square rounded-3xl overflow-hidden md:aspect-[4_/_3]"
+    >
       {
-        stack.map(({ icon: Icon, name }) => (
-          <li class="text-rose-100/50 text-sm lowercase flex items-center gap-2 after:content-['•'] after:ml-2 after:text-rose-100/30 after:font-bold last:after:content-none [&>svg]:w-4">
-            <Icon />
-            <span>{name}</span>
-          </li>
-        ))
+        img ? (
+          <img
+            class="w-full h-full object-cover"
+            alt={`${name} is ${article} ${description.toLowerCase()}`}
+            src={img}
+          />
+        ) : (
+          <article class="w-full h-full bg-stone-800 grid place-content-center">
+            <p class="text-4xl font-bold tracking-widest">WIP</p>
+          </article>
+        )
       }
-    </ul>
-    {
-      img ? (
-        <img
-          class="w-full aspect-square md:aspect-[4/3] rounded-3xl object-cover"
-          alt={`${name} is ${article} ${description.toLowerCase()}`}
-          src={img}
-        />
-      ) : (
-        <article class="w-full aspect-square bg-stone-800 rounded-3xl grid place-content-center object-cover md:aspect-[4/3]">
-          <p class="text-4xl font-bold tracking-widest">WIP</p>
-        </article>
-      )
-    }
+    </section>
   </main>
 </Layout>
