@@ -1,14 +1,32 @@
----
-import Link from "./Link.astro";
----
-
 <section class="mb-32">
-  <p class="mb-4 text-2xl text-rose-100/70">Hi there! I'm</p>
-  <h1 class="mb-4 text-5xl font-bold md:text-6xl">@jrafaaael</h1>
-  <p class="text-xl text-rose-100/70 leading-relaxed md:max-w-[75%] lg:max-w-[50%]">
+  <h1 class="text-4xl font-bold">I'm @jrafaaael</h1>
+  <p class="mb-4 text-rose-100/50">
     <abbr title="Instrumentation and Control">I&amp;C</abbr> Engineer and Software
-    Developer able to work with high-demand <Link href="#"
-      >programming languages</Link
-    > and modern <Link href="#">frameworks and libraries</Link>
+    Developer
+  </p>
+  <p
+    class="text-xl text-rose-100/70 leading-relaxed md:max-w-[75%] lg:max-w-[65%]"
+  >
+    <span class="font-serif italic">Obsessed</span> with user experience. <span
+      class="font-serif italic">Crafting</span
+    > minimalist user interfaces and reliable server-side solutions. <span
+      class="font-serif italic">Iterating</span
+    > to improve results. <span class="font-serif italic">Automating</span>
+    boring stuff. <span class="font-serif italic">Deploying</span> useful software
+    and <span class="font-serif italic">enjoying</span> the whole process!
   </p>
 </section>
+
+<style>
+  p {
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  @media (min-width: 768px) {
+    p {
+      text-align: start;
+      hyphens: initial;
+    }
+  }
+</style>
