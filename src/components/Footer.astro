@@ -10,13 +10,17 @@ const currentYear = new Date().getFullYear();
 >
   <p class="text-rose-100/70 text-sm order-2 md:-order-1">
     © {currentYear},
-    <Link href="https://github.com/jrafaaael/">jrafaaael</Link>
+    <Link href="https://github.com/jrafaaael/" target="_blank">jrafaaael</Link>
   </p>
   <ul class="flex gap-6">
     {
       links.map(({ icon: Icon, link }) => (
         <li>
-          <Link className="flex" href={link}>
+          <Link
+            target="_blank"
+            className="text-sm flex gap-2 [&>svg]:w-4 [&>svg]:h-4"
+            href={link}
+          >
             <Icon />
           </Link>
         </li>
