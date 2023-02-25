@@ -24,7 +24,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "ecg",
-    description: `Hardware, FrontEnd and BackEnd development to visualize ECG plot in multiple devices simultaneously in real-time through WiFi in patient/doctor's preferred browser.`,
+    description: `Hardware, FrontEnd and BackEnd development to visualize ECG plot in multiple devices simultaneously in real-time through WiFi in user's preferred browser.`,
     stack: [JAVASCRIPT, NODE, EXPRESS, SOCKETIO, ARDUINO],
     contribution: ["Hardware", "FrontEnd", "BackEnd", "Design"],
     img: "/images/ecg.webp",
