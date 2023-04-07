@@ -1,0 +1,22 @@
+---
+import FeaturedProjects from "../components/FeaturedProjects.astro";
+import OtherProjects from "../components/OtherProjects.astro";
+import Cube from "../../../components/icons/Cube.astro";
+import Link from "../../../components/Link.astro";
+---
+
+<section id="real-world-projects">
+  <h2 class="text-2xl font-bold">
+    <a href="#real-world-projects" class="flex gap-4">
+      <Cube />
+      Real-world projects
+    </a>
+  </h2>
+  <p class="mb-8 ml-9 text-xl text-rose-100/70">
+    You can see more
+    <Link href="https://github.com/jrafaaael?tab=repositories" target="_blank"
+      >here</Link
+    >
+  </p>
+  <FeaturedProjects />
+</section>

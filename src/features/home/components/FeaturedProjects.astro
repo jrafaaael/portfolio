@@ -1,26 +1,30 @@
 ---
+import { projects } from "../../../data/projects";
 import ProjectCard from "./ProjectCard/ProjectCard.astro";
-import { projects } from "../data/projects";
 
 let isSmaller = false;
 ---
 
-{
-  projects.map(({ contribution, title, img }, idx) => {
-    if ((idx + 1) % 2 === 0) {
-      isSmaller = !isSmaller;
-    }
+<section
+  class="mb-12 flex flex-col gap-12 md:grid md:grid-cols-2 lg:grid-cols-5"
+>
+  {
+    projects.map(({ contribution, title, img }, idx) => {
+      if ((idx + 1) % 2 === 0) {
+        isSmaller = !isSmaller;
+      }
 
-    return (
-      <ProjectCard
-        contribution={contribution}
-        title={title}
-        img={img}
-        isSmaller={isSmaller}
-      />
-    );
-  })
-}
+      return (
+        <ProjectCard
+          contribution={contribution}
+          title={title}
+          img={img}
+          isSmaller={isSmaller}
+        />
+      );
+    })
+  }
+</section>
 
 <script>
   const projects = Array.from(document.querySelectorAll("article"));
