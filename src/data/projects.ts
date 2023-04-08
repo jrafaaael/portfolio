@@ -1,27 +1,34 @@
 import {
   Tech,
   ARDUINO,
-  EXPO,
   EXPRESS,
   JAVASCRIPT,
   NODE,
   PYTHON,
   REACT,
-  REACT_NATIVE,
   SOCKETIO,
   TAILWIND,
-  TYPESCRIPT,
 } from "./techs";
 
-export interface Project {
+export interface BaseProject {
   title: string;
   description: string;
   stack: Tech[];
   contribution: string[];
-  img: string | null;
 }
 
-export const projects: Project[] = [
+interface HasGUI {
+  img: string;
+}
+
+interface NoHasGUI {
+  code: string[];
+}
+
+export type ProjectWithGUI = BaseProject & HasGUI;
+export type ProjectWithoutGUI = BaseProject & NoHasGUI;
+
+export const guiProjects: ProjectWithGUI[] = [
   {
     title: "ecg",
     description: `Hardware, FrontEnd and BackEnd development to visualize ECG plot in multiple devices simultaneously in real-time through WiFi in user's preferred browser.`,
@@ -36,26 +43,34 @@ export const projects: Project[] = [
     contribution: ["FrontEnd", "Design"],
     img: "/images/sigi.webp",
   },
+];
+
+export const noGuiProjects: ProjectWithoutGUI[] = [
   {
     title: "tw-rt-report",
     description:
-      "Python script to generate a report spreadsheet with all retweets made by a list of users to @account in the current month.",
+      "Script to generate a report spreadsheet with all retweets made by a list of users to @account in the current month.",
     stack: [PYTHON],
     contribution: ["Software"],
-    img: "/images/python_code.webp",
+    code: [
+      "import tweepy",
+      "",
+      "def get_tweet(id):",
+      "  tweets = tweepy.get_users_tweets(id)",
+      "  return tweets",
+    ],
   },
   {
     title: "school-bell-automation",
-    description: `School bell automation of "Complejo Educativo Fray Luís Amigó" for each start of classes, recess and end of classes of each course.`,
+    description: `School bell automation of "Complejo Educativo Fray Luís Amigó" for each start, recess and end of classes of each course.`,
     stack: [ARDUINO],
     contribution: ["Hardware", "Software"],
-    img: "/images/arduino.webp",
-  },
-  {
-    title: "moodhub",
-    description: `App to track emotions daily.`,
-    stack: [TYPESCRIPT, REACT_NATIVE, EXPO],
-    contribution: ["App", "Design"],
-    img: null,
+    code: [
+      "import tweepy",
+      "",
+      "def get_tweet(id):",
+      "  tweets = tweepy.get_users_tweets(id)",
+      "  return tweets",
+    ],
   },
 ];
