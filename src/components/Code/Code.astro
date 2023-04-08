@@ -1,0 +1,41 @@
+---
+import { getHighlighter, Lang } from "shiki";
+
+interface Props {
+  code: string[];
+  lang: Lang;
+}
+
+const { code, lang } = Astro.props;
+
+const formattedCode = code.map((line) => `${line}\n`).join("");
+const highlighter = await getHighlighter({
+  langs: [lang],
+  theme: "github-dark",
+});
+const html = highlighter.codeToHtml(formattedCode, { lang });
+---
+
+<Fragment set:html={html} />
+
+<style is:global>
+  pre {
+    background-color: transparent !important;
+  }
+
+  code {
+    font-size: 12px;
+    counter-reset: step;
+    counter-increment: step 0;
+  }
+
+  code .line::before {
+    content: counter(step);
+    counter-increment: step;
+    width: 1rem;
+    margin-right: 1rem;
+    display: inline-block;
+    text-align: right;
+    color: rgba(115, 138, 148, 0.4);
+  }
+</style>
