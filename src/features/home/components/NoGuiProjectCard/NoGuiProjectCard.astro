@@ -5,7 +5,7 @@ import type { ProjectWithoutGUI } from "../../../../data/projects";
 
 interface Props extends ProjectWithoutGUI {}
 
-const { contribution, title, description, stack, code } = Astro.props;
+const { contribution, title, description, stack, lang, code } = Astro.props;
 ---
 
 <article class="border border-white/10 rounded-3xl overflow-hidden">
@@ -24,7 +24,7 @@ const { contribution, title, description, stack, code } = Astro.props;
   </div>
   <div class="h-full pl-6">
     <div class="h-full p-2 border-t border-l border-white/10 rounded-tl-xl">
-      <Code lang="python" code={code} />
+      <Code lang={lang} code={code} />
     </div>
   </div>
 </article>
