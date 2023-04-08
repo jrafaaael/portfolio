@@ -1,14 +1,14 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { projects } from "../../data/projects";
+import { guiProjects } from "../../data/projects";
 import { startWithVowel } from "../../utils/start-with-vowel";
 
 export function getStaticPaths() {
-  return projects.map(({ title }) => ({ params: { name: title } }));
+  return guiProjects.map(({ title }) => ({ params: { name: title } }));
 }
 
 const { name } = Astro.params;
-const { description, stack, contribution, img } = projects.find(
+const { description, stack, contribution, img } = guiProjects.find(
   ({ title }) => title === name
 )!;
 
