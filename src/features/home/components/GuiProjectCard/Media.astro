@@ -1,7 +1,7 @@
 ---
-import type { Project } from "../../data/projects";
+import type { ProjectWithGUI } from '../../../../data/projects';
 
-interface Props extends Pick<Project, "title" | "img"> {}
+interface Props extends Pick<ProjectWithGUI, "title" | "img"> {}
 
 const { title, img } = Astro.props;
 ---

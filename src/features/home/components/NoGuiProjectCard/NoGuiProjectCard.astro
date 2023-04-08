@@ -1,0 +1,43 @@
+---
+import Body from "../ProjectCard/Body.astro";
+import Code from "../../../../components/Code/Code.astro";
+import type { ProjectWithoutGUI } from "../../../../data/projects";
+
+interface Props extends ProjectWithoutGUI {}
+
+const { contribution, title, description, stack, code } = Astro.props;
+---
+
+<article class="border border-white/10 rounded-3xl overflow-hidden">
+  <div class="mb-4 p-6 pb-0">
+    <ul class="hidden mb-4 lg:flex lg:gap-2">
+      {
+        stack.map(({ icon: Icon }) => (
+          <li class="w-10 h-10 border border-white/10 rounded-lg flex items-center justify-center icon">
+            <Icon />
+          </li>
+        ))
+      }
+    </ul>
+    <Body title={title} contribution={contribution} />
+    <p class="mt-2 text-rose-100/70 leading-relaxed">{description}</p>
+  </div>
+  <div class="h-full pl-6">
+    <div class="h-full p-2 border-t border-l border-white/10 rounded-tl-xl">
+      <Code lang="python" code={code} />
+    </div>
+  </div>
+</article>
+
+<style>
+  article {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 550ms, opacity 750ms;
+  }
+
+  article.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+</style>

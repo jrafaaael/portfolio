@@ -1,29 +1,24 @@
 ---
-import { projects } from "../../../data/projects";
-import ProjectCard from "./ProjectCard/ProjectCard.astro";
+import GuiProjectCard from "./GuiProjectCard/GuiProjectCard.astro";
+import NoGuiProjectCard from "./NoGuiProjectCard/NoGuiProjectCard.astro";
+import { guiProjects, noGuiProjects } from "../../../data/projects";
 
 let isSmaller = false;
 ---
 
-<section
-  class="mb-12 flex flex-col gap-12 md:grid md:grid-cols-2 lg:grid-cols-5"
->
+<section class="mb-8 flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-5">
   {
-    projects.map(({ contribution, title, img }, idx) => {
+    guiProjects.map((project, idx) => {
       if ((idx + 1) % 2 === 0) {
         isSmaller = !isSmaller;
       }
 
-      return (
-        <ProjectCard
-          contribution={contribution}
-          title={title}
-          img={img}
-          isSmaller={isSmaller}
-        />
-      );
+      return <GuiProjectCard {...project} isSmaller={isSmaller} />;
     })
   }
+</section>
+<section class="flex flex-col gap-8 md:grid md:grid-cols-2">
+  {noGuiProjects.map((project) => <NoGuiProjectCard {...project} />)}
 </section>
 
 <script>
