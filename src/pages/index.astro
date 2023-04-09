@@ -1,10 +1,20 @@
 ---
+import { SEO } from "astro-seo";
 import Layout from "../layouts/Layout.astro";
 import Me from "../features/home/sections/Me.astro";
 import Projects from "../features/home/sections/Projects.astro";
 ---
 
-<Layout title="jrafaaael | home">
+<head>
+  <SEO
+    charset="UTF-8"
+    title="jrafaaael"
+    titleTemplate="%s | home"
+    description="I&C Engineer and Software Developer"
+  />
+</head>
+
+<Layout title="home">
   <main class="max-w-6xl m-auto mt-28 p-6 md:mt-56">
     <Me />
     <Projects />

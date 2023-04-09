@@ -1,4 +1,5 @@
 ---
+import { SEO } from "astro-seo";
 import Layout from "../../layouts/Layout.astro";
 import { guiProjects } from "../../data/projects";
 import { startWithVowel } from "../../utils/start-with-vowel";
@@ -16,7 +17,16 @@ const article = startWithVowel(description) ? "an" : "a";
 const formatter = new Intl.ListFormat("en");
 ---
 
-<Layout title={`jrafaaael | ${name}`}>
+<head>
+  <SEO
+    charset="UTF-8"
+    title="jrafaaael"
+    titleTemplate={`%s | ${name}`}
+    description={description}
+  />
+</head>
+
+<Layout title={name!}>
   <main class="max-w-4xl m-auto mt-28 p-6 md:mt-56">
     <h1 class="mb-4 text-4xl font-bold">{name}</h1>
     <p class="mb-8 text-rose-100/70 text-lg leading-relaxed md:text-xl">
