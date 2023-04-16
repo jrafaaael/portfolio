@@ -1,7 +1,7 @@
 ---
-import type { ProjectWithGUI } from "../../../../data/projects";
+import type { ProjectSchema } from "../../../../content/project/schema";
 
-interface Props extends Pick<ProjectWithGUI, "title" | "img"> {}
+interface Props extends Pick<ProjectSchema, "title" | "img"> {}
 
 const { title, img } = Astro.props;
 ---

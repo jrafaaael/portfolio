@@ -1,19 +1,22 @@
 ---
+import { getCollection } from "astro:content";
+
 import GuiProjectCard from "./GuiProjectCard/GuiProjectCard.astro";
 import NoGuiProjectCard from "./NoGuiProjectCard/NoGuiProjectCard.astro";
-import { guiProjects, noGuiProjects } from "../../../data/projects";
+import { noGuiProjects } from "../../../data/projects";
 
+const guiProjects = await getCollection("project");
 let isSmaller = false;
 ---
 
 <section class="mb-8 flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-5">
   {
-    guiProjects.map((project, idx) => {
+    guiProjects.map(({ data }, idx) => {
       if ((idx + 1) % 2 === 0) {
         isSmaller = !isSmaller;
       }
 
-      return <GuiProjectCard {...project} isSmaller={isSmaller} />;
+      return <GuiProjectCard {...data} isSmaller={isSmaller} />;
     })
   }
 </section>

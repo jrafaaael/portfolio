@@ -1,9 +1,9 @@
 ---
 import Media from "./Media.astro";
 import Body from "../ProjectCard/Body.astro";
-import type { ProjectWithGUI } from "../../../../data/projects";
+import type { ProjectSchema } from "../../../../content/project/schema";
 
-interface Props extends ProjectWithGUI {
+interface Props extends ProjectSchema {
   isSmaller: boolean;
 }
 

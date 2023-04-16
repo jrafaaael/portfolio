@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import { SEO } from "astro-seo";
+
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("project");
+
+  return projects.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry?.render();
+---
+
+<head>
+  <SEO
+    charset="UTF-8"
+    title="jrafaaael"
+    titleTemplate={`%s | ${entry.data.title}`}
+    description={entry.data.description}
+  />
+</head>
+
+<Layout title="">
+  <main class="max-w-4xl m-auto mt-28 p-6 md:mt-56">
+    <Content />
+  </main>
+</Layout>
+
+<style is:global>
+  @tailwind base;
+
+  @layer base {
+    h1 {
+      @apply mb-4 text-4xl font-bold;
+    }
+    main > p {
+      @apply mb-8 text-rose-100/70 text-lg leading-relaxed md:text-xl;
+    }
+    img {
+      @apply aspect-square rounded-3xl overflow-hidden md:aspect-[4_/_3] w-full h-full object-cover;
+    }
+  }
+</style>

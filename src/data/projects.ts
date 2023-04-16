@@ -1,15 +1,5 @@
 import type { Lang } from "shiki";
-import {
-  Tech,
-  ARDUINO,
-  EXPRESS,
-  JAVASCRIPT,
-  NODE,
-  PYTHON,
-  REACT,
-  SOCKETIO,
-  TAILWIND,
-} from "./techs";
+import { Tech, ARDUINO, PYTHON } from "./techs";
 
 export interface BaseProject {
   title: string;
@@ -18,34 +8,12 @@ export interface BaseProject {
   contribution: string[];
 }
 
-interface HasGUI {
-  img: string;
-}
-
 interface NoHasGUI {
   lang: Lang;
   code: string[];
 }
 
-export type ProjectWithGUI = BaseProject & HasGUI;
 export type ProjectWithoutGUI = BaseProject & NoHasGUI;
-
-export const guiProjects: ProjectWithGUI[] = [
-  {
-    title: "ecg",
-    description: `Hardware, FrontEnd and BackEnd development to visualize ECG plot in multiple devices simultaneously in real-time through WiFi in user's preferred browser.`,
-    stack: [JAVASCRIPT, NODE, EXPRESS, SOCKETIO, ARDUINO],
-    contribution: ["Hardware", "FrontEnd", "BackEnd", "Design"],
-    img: "/images/ecg.webp",
-  },
-  {
-    title: "sigi",
-    description: `Self-hosted app to share files on local network and generate "Plan Operativo Anual" (POA) document. Also allow internal comunication between teams through real-time chat. Backend built with PHP (Laravel) by a coworker.`,
-    stack: [JAVASCRIPT, REACT, TAILWIND, SOCKETIO],
-    contribution: ["FrontEnd", "Design"],
-    img: "/images/sigi.webp",
-  },
-];
 
 export const noGuiProjects: ProjectWithoutGUI[] = [
   {

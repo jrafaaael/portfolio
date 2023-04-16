@@ -1,0 +1,21 @@
+---
+title: "sigi"
+description: 'App to allow internal comunication between teams through real-time chat, share files on local network and generate "Plan Operativo Anual" (POA) document.'
+img: "/images/sigi.webp"
+contribution: ["frontend","design"]
+---
+import FormattedList from '../../features/projects/components/FormattedList.astro'
+
+export const stack = ["javascript", "react", "tailwind", "socketio"];
+export const contribution = ["frontend","design"];
+
+# sigi
+
+Self-hosted app to share files on local network and generate "Plan Operativo Anual" (POA) document. Also allow internal comunication between teams through real-time chat. Backend built with PHP (Laravel) by a coworker.
+
+<section class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:gap-16">
+  <FormattedList title="Build with" list={stack} />
+  <FormattedList title="My contribution" list={contribution} />
+</section>
+
+![](/images/sigi.webp)
