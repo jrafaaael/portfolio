@@ -2,6 +2,7 @@ export interface Project {
   title: string;
   description: string;
   stack: string[];
+  link?: string;
 }
 
 export const projects: Project[] = [
@@ -9,7 +10,7 @@ export const projects: Project[] = [
     title: "ecg",
     description:
       "Visualize ECG plot in multiple devices simultaneously through WiFi in user's preferred browser.",
-    stack: ["node", "express", "socketio", "arduino"],
+    stack: ["javascript", "express", "socketio", "arduino"],
   },
   {
     title: "sigi",
@@ -33,5 +34,6 @@ export const projects: Project[] = [
     description:
       "Python scraper of Central Bank of Venezuela to collect official exchange rates. Also nodejs API from those data.",
     stack: ["python", "nodejs"],
+    link: "https://github.com/jrafaaael/cbv",
   },
 ];
