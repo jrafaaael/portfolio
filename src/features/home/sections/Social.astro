@@ -3,8 +3,10 @@ import Link from "../../../components/Link.astro";
 import { links } from "../../../data/social-links";
 ---
 
-<section>
-  <h2 class="mb-6 text-xl font-bold">Social</h2>
+<section id="social">
+  <h2 class="mb-6 text-xl font-bold">
+    <a href="#social" class="flex gap-4"> Social</a>
+  </h2>
   <ul class="flex flex-col">
     {
       links.map(({ label, link, text }) => (
