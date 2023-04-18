@@ -1,17 +1,20 @@
 ---
+import Arrow from "../../../components/icons/Arrow.astro";
 import Link from "../../../components/Link.astro";
 import ProjectList from "../components/ProjectList.astro";
 ---
 
-<section id="real-world-projects">
-  <h2 class="text-xl font-bold">
-    <a href="#real-world-projects" class="flex gap-4"> Real-world projects</a>
-  </h2>
-  <p class="mb-8 text-lg text-rose-100/70">
-    Show me
-    <Link href="https://github.com/jrafaaael?tab=repositories" target="_blank">
-      more projects!
+<section id="real-world-projects" class="mb-16">
+  <div class="mb-8 flex justify-between">
+    <h2 class="text-xl font-bold">
+      <a href="#real-world-projects" class="flex gap-4"> Real-world projects</a>
+    </h2>
+    <Link
+      className="flex items-center gap-2"
+      href="https://github.com/jrafaaael?tab=repositories"
+    >
+      More <Arrow />
     </Link>
-  </p>
+  </div>
   <ProjectList />
 </section>
