@@ -1,0 +1,30 @@
+---
+import Link from "../../../components/Link.astro";
+import { links } from "../../../data/social-links";
+---
+
+<section>
+  <h2 class="mb-6 text-xl font-bold">Social</h2>
+  <ul class="flex flex-col">
+    {
+      links.map(({ label, link, text }) => (
+        <li class="group">
+          <Link
+            className="text-rose-100/50 py-4 flex justify-between items-center gap-2 md:gap-6"
+            href={link}
+          >
+            <span class="font-bold transition duration-200 group-hover:text-rose-100/90">
+              {label}
+            </span>
+            <div class="h-[1px] bg-rose-100/10 flex-1 relative">
+              <div class="bg-rose-100/50 absolute inset-0 scale-0 transition duration-500 origin-top-left group-hover:scale-100" />
+            </div>
+            <span class="text-sm italic transition group-hover:delay-500 group-hover:text-rose-100/90">
+              {text}
+            </span>
+          </Link>
+        </li>
+      ))
+    }
+  </ul>
+</section>
