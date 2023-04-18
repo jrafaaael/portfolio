@@ -33,7 +33,7 @@ export const projects: Project[] = [
     title: "cbv",
     description:
       "Python scraper of Central Bank of Venezuela to collect official exchange rates. Also nodejs API from those data.",
-    stack: ["python", "nodejs"],
+    stack: ["python", "typescript", "nodejs", "hono"],
     link: "https://github.com/jrafaaael/cbv",
   },
 ].sort((a) => (a.link ? -1 : 1));
