@@ -8,4 +8,7 @@ interface Props extends Omit<HTMLAttributes<"a">, "class"> {
 const { className = "", ...props } = Astro.props;
 ---
 
-<a class={`text-rose-300 ${className}`} {...props}><slot /></a>
+<a
+  class={`text-rose-100/70 transition hover:text-rose-100/90 ${className}`}
+  {...props}><slot /></a
+>
