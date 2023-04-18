@@ -1,48 +1,37 @@
-import type { Lang } from "shiki";
-import { Tech, ARDUINO, PYTHON } from "./techs";
-
-export interface BaseProject {
+export interface Project {
   title: string;
   description: string;
-  stack: Tech[];
-  contribution: string[];
+  stack: string[];
 }
 
-interface NoHasGUI {
-  lang: Lang;
-  code: string[];
-}
-
-export type ProjectWithoutGUI = BaseProject & NoHasGUI;
-
-export const noGuiProjects: ProjectWithoutGUI[] = [
+export const projects: Project[] = [
+  {
+    title: "ecg",
+    description:
+      "Visualize ECG plot in multiple devices simultaneously through WiFi in user's preferred browser.",
+    stack: ["node", "express", "socketio", "arduino"],
+  },
+  {
+    title: "sigi",
+    description:
+      "Self-hosted app to allow internal real-time chat, share files on local network and generate POA document.",
+    stack: ["javascript", "react", "tailwind", "socketio"],
+  },
   {
     title: "tw-rt-report",
     description:
-      "Script to generate a report spreadsheet with all retweets made by a list of users to @account in the current month.",
-    stack: [PYTHON],
-    contribution: ["Software"],
-    lang: "python",
-    code: [
-      "import tweepy",
-      "",
-      "def get_tweet(id):",
-      "  tweets = tweepy.get_users_tweets(id)",
-      "  return tweets",
-    ],
+      "Script to generate a spreadsheet with retweets made by a list of users to @account on specified month.",
+    stack: ["python"],
   },
   {
     title: "school-bell-automation",
-    description: `School bell automation of "Complejo Educativo Fray Luís Amigó" for each start, recess and end of classes of each course.`,
-    stack: [ARDUINO],
-    contribution: ["Hardware", "Software"],
-    lang: "cpp",
-    code: [
-      "void setup() {",
-      "  if (!rtc.begin()) {",
-      '    Serial.print("rtc not found");',
-      "  }",
-      "}",
-    ],
+    description: `School bell automation for each start, recess and end of classes of each course.`,
+    stack: ["arduino", "c++"],
+  },
+  {
+    title: "cbv",
+    description:
+      "Python scraper of Central Bank of Venezuela to collect official exchange rates. Also nodejs API from those data.",
+    stack: ["python", "nodejs"],
   },
 ];

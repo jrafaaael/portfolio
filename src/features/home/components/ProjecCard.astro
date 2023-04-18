@@ -1,0 +1,38 @@
+---
+import Project from "../../../data/projects";
+
+interface Props extends Project {}
+
+const { title, stack, description } = Astro.props;
+---
+
+<article>
+  <div class="mb-2 flex flex-col md:flex-row md:gap-6">
+    <h3 class="text-rose-100/90 text-xl font-bold line-clamp-1">
+      {title}
+    </h3>
+    <ul class="flex items-center gap-2 overflow-y-auto">
+      {
+        stack.map((work) => (
+          <li class="text-rose-100/50 text-sm lowercase italic flex items-center gap-2 after:content-['•'] after:text-rose-100/30 last:after:content-none">
+            {work}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <p class="text-rose-100/70 leading-relaxed">{description}</p>
+</article>
+
+<style>
+  article {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 550ms, opacity 750ms;
+  }
+
+  article.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+</style>
