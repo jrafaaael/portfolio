@@ -36,4 +36,4 @@ export const projects: Project[] = [
     stack: ["python", "nodejs"],
     link: "https://github.com/jrafaaael/cbv",
   },
-];
+].sort((a) => (a.link ? -1 : 1));
