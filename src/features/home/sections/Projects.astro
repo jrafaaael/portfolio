@@ -1,5 +1,4 @@
 ---
-import Arrow from "../../../components/icons/Arrow.astro";
 import Link from "../../../components/Link.astro";
 import ProjectList from "../components/ProjectList.astro";
 ---
@@ -7,14 +6,9 @@ import ProjectList from "../components/ProjectList.astro";
 <section id="real-world-projects" class="mb-16">
   <div class="mb-8 flex justify-between">
     <h2 class="text-xl font-bold">
-      <a href="#projects" class="flex gap-4">Projects</a>
+      <a href="#real-world-projects" class="flex gap-4">Real-world projects</a>
     </h2>
-    <Link
-      className="flex items-center gap-2"
-      href="https://github.com/jrafaaael?tab=repositories"
-    >
-      More <Arrow />
-    </Link>
+    <Link href="https://github.com/jrafaaael?tab=repositories">More</Link>
   </div>
   <ProjectList />
 </section>
