@@ -1,12 +1,15 @@
+---
+import Link from "../../../components/Link.astro";
+import { links } from "../../../data/social-links";
+---
+
 <section class="mb-32">
   <h1 class="text-3xl font-bold">I'm @jrafaaael</h1>
   <p class="mb-4 text-rose-100/50">
     <abbr title="Instrumentation and Control">I&amp;C</abbr> Engineer and Software
     Developer
   </p>
-  <p
-    class="text-lg text-rose-100/70 leading-relaxed"
-  >
+  <p class="mb-6 text-lg text-rose-100/70 leading-relaxed md:max-w-[75%]">
     <span class="font-serif italic">Obsessed</span> with user experience. <span
       class="font-serif italic">Crafting</span
     > minimalist user interfaces and reliable server-side solutions. <span
@@ -15,6 +18,17 @@
     boring stuff. <span class="font-serif italic">Deploying</span> useful software
     and <span class="font-serif italic">enjoying</span> the whole process!
   </p>
+  <ul class="flex flex-col gap-2">
+    {
+      links.map(({ label, text, link }) => (
+        <li>
+          <Link href={link} className="py-2 text-sm">
+            {text} on {label}
+          </Link>
+        </li>
+      ))
+    }
+  </ul>
 </section>
 
 <style>
