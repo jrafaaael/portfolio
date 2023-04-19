@@ -7,7 +7,7 @@ export const links = [
   {
     label: "LinkedIn",
     link: "https://www.linkedin.com/in/jrafaaael/",
-    text: "Hire me!"
+    text: "Hire me"
   },
   {
     label: "Twitter",
@@ -17,6 +17,6 @@ export const links = [
   {
     label: "Email",
     link: "mailto:jrmd070102@gmail.com",
-    text: "Let's chat!"
+    text: "Let's chat"
   },
 ];
