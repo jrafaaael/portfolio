@@ -1,0 +1,41 @@
+---
+import Link from "../../../components/Link.astro";
+import Badge from "../../../components/Badge.astro";
+import Code from "../../../components/Code.astro";
+import type { Project } from "../../../data/projects";
+
+type Props = Project;
+
+const { description, stack, title, code, img, lang, link } = Astro.props;
+---
+
+<article class="flex flex-col">
+  {
+    code ? (
+      <div class="w-full mb-2 pl-2 pt-4 bg-stone-800/50 rounded-2xl relative overflow-hidden lg:aspect-video after:content-[''] after:bg-gradient-to-b after:from-transparent after:to-stone-900/90 after:absolute after:inset-0">
+        <Code lang={lang} code={code} />
+      </div>
+    ) : (
+      <img
+        class="w-full aspect-[4/3] mb-4 rounded-2xl object-cover"
+        src={img}
+      />
+    )
+  }
+  <div class="flex items-center gap-4">
+    <h3 class="font-bold line-clamp-1">
+      {link ? <Link href={link}>{title}</Link> : title}
+    </h3>
+    {link ? <Badge>OSS</Badge> : null}
+  </div>
+  <p class="mb-4 text-rose-100/70 text-sm leading-relaxed">{description}</p>
+  <ul class="flex items-center gap-2 overflow-y-auto">
+    {
+      stack.map((work) => (
+        <li class="text-rose-100/50 text-xs lowercase italic flex items-center gap-2 after:content-['•'] after:text-rose-100/30 last:after:content-none">
+          {work}
+        </li>
+      ))
+    }
+  </ul>
+</article>
