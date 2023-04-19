@@ -3,6 +3,7 @@ export interface Project {
   description: string;
   stack: string[];
   link?: string;
+  img?: string;
 }
 
 export const projects: Project[] = [
@@ -11,12 +12,14 @@ export const projects: Project[] = [
     description:
       "Visualize ECG plot in multiple devices simultaneously through WiFi in user's preferred browser.",
     stack: ["javascript", "express", "socketio", "arduino"],
+    img: '/images/ecg.webp'
   },
   {
     title: "sigi",
     description:
       "Self-hosted app to allow internal real-time chat, share files on local network and generate POA document.",
     stack: ["javascript", "react", "tailwind", "socketio"],
+    img: '/images/sigi.webp'
   },
   {
     title: "tw-rt-report",
@@ -36,4 +39,4 @@ export const projects: Project[] = [
     stack: ["python", "typescript", "nodejs", "hono"],
     link: "https://github.com/jrafaaael/cbv",
   },
-].sort((a) => (a.link ? -1 : 1));
+];
