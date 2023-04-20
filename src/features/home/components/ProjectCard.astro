@@ -12,7 +12,7 @@ const { description, stack, title, code, img, lang, link } = Astro.props;
 <article class="flex flex-col">
   {
     code ? (
-      <div class="w-full mb-2 pl-2 pt-4 bg-stone-800/50 rounded-2xl relative overflow-hidden lg:aspect-video after:content-[''] after:bg-gradient-to-b after:from-transparent after:to-stone-900/90 after:absolute after:inset-0">
+      <div class="aspect-[4/3] mb-2 pl-3 pt-4 bg-stone-900 rounded-tl-2xl rounded-tr-2xl relative overflow-hidden after:content-[''] after:bg-gradient-to-b after:from-white/[0.014] after:via-stone-900/40 after:to-stone-900/90 after:absolute after:inset-0">
         <Code lang={lang} code={code} />
       </div>
     ) : (
@@ -22,7 +22,7 @@ const { description, stack, title, code, img, lang, link } = Astro.props;
       />
     )
   }
-  <div class="flex items-center gap-4">
+  <div class="mb-1 flex items-center gap-4">
     <h3 class="font-bold line-clamp-1">
       {link ? <Link href={link}>{title}</Link> : title}
     </h3>
