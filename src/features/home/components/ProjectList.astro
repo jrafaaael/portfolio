@@ -1,27 +1,37 @@
 ---
-import { getCollection } from "astro:content";
-
-import GuiProjectCard from "./GuiProjectCard/GuiProjectCard.astro";
-import NoGuiProjectCard from "./NoGuiProjectCard/NoGuiProjectCard.astro";
-import { noGuiProjects } from "../../../data/projects";
-
-const guiProjects = await getCollection("project");
-let isSmaller = false;
+import ProjectCard from "./ProjectCard.astro";
+import Image from "../../../components/icons/Image.astro";
+import { projects } from "../../../data/projects";
 ---
 
-<section class="mb-8 flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-5">
-  {
-    guiProjects.map(({ data }, idx) => {
-      if ((idx + 1) % 2 === 0) {
-        isSmaller = !isSmaller;
+<section
+  class="mb-12 flex flex-col gap-10 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:gap-y-16"
+>
+  <article class="flex flex-col" id="your-project">
+    <div
+      class="w-full aspect-[4/3] mb-4 bg-stone-800/50 rounded-2xl flex justify-center items-center"
+    >
+      <Image />
+    </div>
+    <h3 class="mb-1 font-bold">your-project</h3>
+    <p class="mb-4 text-rose-100/70 text-sm leading-relaxed">
+      Do you have a cool idea? Do you want to make it reality? Let's connect!
+    </p>
+    <ul class="mt-auto flex items-center flex-wrap gap-2 overflow-y-auto">
+      {
+        ["awesome", "tech", "stack", "will", "go", "here"].map((name) => (
+          <li class="text-rose-100/50 text-xs lowercase italic flex items-center gap-2 after:content-['•'] after:text-rose-100/30 last:after:content-none">
+            {name}
+          </li>
+        ))
       }
-
-      return <GuiProjectCard {...data} isSmaller={isSmaller} />;
-    })
+    </ul>
+  </article>
+  {
+    projects
+      .sort((_, b) => (b.img || b.link ? 1 : -1))
+      .map((project) => <ProjectCard {...project} />)
   }
-</section>
-<section class="flex flex-col gap-8 md:grid md:grid-cols-2">
-  {noGuiProjects.map((project) => <NoGuiProjectCard {...project} />)}
 </section>
 
 <script>
@@ -45,3 +55,21 @@ let isSmaller = false;
     observer.observe(el);
   });
 </script>
+
+<style is:global>
+  #real-world-projects > section > article {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 550ms, opacity 750ms;
+  }
+
+  #real-world-projects > section > article.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  #your-project svg {
+    width: 30px;
+    color: rgb(255 228 230 / 0.25);
+  }
+</style>

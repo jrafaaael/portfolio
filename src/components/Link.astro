@@ -1,11 +1,26 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import Arrow from "./icons/Arrow.astro";
 
 interface Props extends Omit<HTMLAttributes<"a">, "class"> {
   className?: string;
 }
 
 const { className = "", ...props } = Astro.props;
+const isExternal =
+  typeof props.href === "string" && props.href.startsWith("https");
 ---
 
-<a class={`text-rose-300 ${className}`} {...props}><slot /></a>
+<a
+  class={`group text-rose-300 transition hover:text-rose-100/90 ${className}`}
+  {...props}
+>
+  <slot />
+  {
+    isExternal ? (
+      <span class="w-4 inline-block -rotate-45 transition-transform duration-300 group-hover:translate-x-1 -group-hover:translate-y-2 group-hover:scale-110">
+        <Arrow />
+      </span>
+    ) : null
+  }
+</a>
