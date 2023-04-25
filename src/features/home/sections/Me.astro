@@ -3,7 +3,7 @@ import Link from "../../../components/Link.astro";
 import { links } from "../data/social-links";
 ---
 
-<section class="mb-32">
+<section id="me" class="mb-32">
   <h1 class="text-3xl font-bold">I'm @jrafaaael</h1>
   <p class="mb-4 text-rose-100/50">
     <abbr title="Instrumentation and Control">I&amp;C</abbr> Engineer and Software
@@ -20,7 +20,7 @@ import { links } from "../data/social-links";
     boring stuff. <span class="font-serif italic">Deploying</span> useful software
     and <span class="font-serif italic">enjoying</span> the whole process!
   </p>
-  <ul id="social" class="flex flex-col gap-2">
+  <ul class="flex flex-col gap-2">
     {
       links.map(({ label, text, link }) => (
         <li>
