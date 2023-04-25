@@ -2,7 +2,7 @@
 import Link from "../../../components/Link.astro";
 import Badge from "../../../components/Badge.astro";
 import Code from "../../../components/Code.astro";
-import type { Project } from "../../../data/projects";
+import type { Project } from "../data/projects";
 
 type Props = Project;
 
@@ -12,7 +12,7 @@ const { description, stack, title, code, img, lang, link } = Astro.props;
 <article class="flex flex-col">
   {
     code ? (
-      <div class="aspect-[4/3] mb-2 pl-3 pt-4 bg-stone-900 rounded-tl-2xl rounded-tr-2xl relative overflow-hidden after:content-[''] after:bg-gradient-to-b after:from-white/[0.014] after:via-stone-900/40 after:to-stone-900/90 after:absolute after:inset-0">
+      <div class="aspect-[4/3] pl-3 pt-4 bg-stone-900 rounded-tl-2xl rounded-tr-2xl relative overflow-hidden after:content-[''] after:bg-gradient-to-b after:from-white/[0.014] after:via-stone-900/40 after:to-stone-900 after:absolute after:inset-0">
         <Code lang={lang} code={code} />
       </div>
     ) : (
